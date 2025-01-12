@@ -1,0 +1,102 @@
+$color-black :#000000;
+
+$color-white: #FFFFFF;
+
+$color-blue: #0065DC;
+
+$color-gray-tmenu :#545454;
+
+$color-menu-background:#f8f8f8;
+
+$color-background-header-btn:#1F283F;
+
+$color-orange: #FF5722;
+
+$color-gray-serivce :#5E5E5E;
+
+$color-gray-khadamat :#333333;
+
+$color-gray-mtapsi :#4D4D4D;
+
+$color-gray-blog :#9B9B9B;
+
+$color-gray-copyright :#ACACAC;
+
+$font-db: Dana-Regular;
+
+$font-dr: Dana-Bold;
+
+@font-face {
+    font-family: "Dana-Regular";
+    src: url(../font/Dana-Bold.woff) format("woff");
+}
+
+@font-face {
+    font-family: "Dana-Bold";
+    src: url(../font/Dana-Regular.woff) format("woff");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Dana-Regular", Arial, Helvetica, sans-serif !important;
+    direction: rtl;
+}
+
+@mixin centring($topvalue) {
+    position: absolute;
+    top: $topvalue;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    }
+
+@mixin fontSize($fontsize:1.1rem) {
+    font-size: $fontsize;
+}
+
+@mixin Titles {
+    color: $color-black;
+    font-weight: 700 !important;
+    font-size: 30px;
+}
+
+@mixin btnsize($padding: 10px 40px) {
+    padding: $padding;
+}
+
+@mixin headerBtnsBorder{
+    border: 2px solid $color-white;
+} 
+
+@mixin imgAndBtnBorderRadius {
+    border-radius: 8px;
+}
+
+@mixin dFlex($justify:space-between, $align:center) {
+    display: flex;
+    justify-content: $justify;
+    align-items:$align;
+}
+
+@mixin none {
+    text-decoration: none;
+    list-style-type: none;
+}
+
+@mixin borderleft {
+    height: 40px;
+    border-left: 0.13rem solid $color-white;
+    background: $color-white;
+    margin: 0 10px;
+}
+
+@mixin transition {
+    transition: all 0.3s ease-in-out;
+}
+
+@mixin margintop {
+    margin-top: 90px;
+}

@@ -1,0 +1,1168 @@
+@font-face {
+  font-family: "Dana-Regular";
+  src: url(../font/Dana-Bold.woff) format("woff");
+}
+@font-face {
+  font-family: "Dana-Bold";
+  src: url(../font/Dana-Regular.woff) format("woff");
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Dana-Regular", Arial, Helvetica, sans-serif !important;
+  direction: rtl;
+}
+
+.navbar {
+  font-family: Dana-Bold;
+  background: #f8f8f8;
+  border-bottom: 0.1rem solid #f1e3e3;
+  position: fixed;
+  width: 100%;
+  height: 55px;
+  z-index: 1;
+}
+.navbar .menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: space-around;
+}
+@media (max-width: 789px) {
+  .navbar .menu {
+    justify-content: space-between;
+  }
+}
+.navbar .menu a {
+  margin-top: 10px;
+}
+.navbar .menu svg {
+  cursor: pointer;
+  width: 100px;
+  height: 40px;
+}
+.navbar .menu svg:hover path:nth-child(1), .navbar .menu svg:hover path:nth-child(2) {
+  fill: #FF5722;
+}
+.navbar .menu svg:hover path:nth-child(3) {
+  fill: #000000;
+}
+@media (max-width: 789px) {
+  .navbar .menu svg {
+    margin-right: 15px;
+  }
+}
+.navbar .menu .navbar-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar .menu .navbar-menu .menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  gap: 20px;
+  color: #545454;
+  margin-left: 30px;
+  cursor: pointer;
+}
+.navbar .menu .navbar-menu .menu-item li:hover {
+  color: #FF5722;
+  cursor: pointer;
+}
+.navbar .menu .navbar-menu .menu-item .navbar-menu-link {
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+  list-style-type: none;
+}
+@media (max-width: 789px) {
+  .navbar .menu .navbar-menu {
+    display: none;
+  }
+}
+.navbar .menu .btn {
+  border-radius: 8px;
+  padding: 10px 40px;
+  font-size: 0.8rem;
+  font-family: Dana-Bold;
+  color: #FFFFFF;
+  background-color: #FF5722;
+  border: none;
+  cursor: pointer;
+}
+.navbar .menu .btn:hover {
+  transform: scale(0.99);
+}
+@media (max-width: 992px) {
+  .navbar .menu .btn {
+    display: none;
+  }
+}
+
+.hamburger-menu {
+  width: 35px;
+  height: 35px;
+  z-index: 1;
+  display: none;
+}
+@media (max-width: 789px) {
+  .hamburger-menu {
+    display: block;
+    margin-left: 15px;
+  }
+}
+.hamburger-menu .humburger-toggle {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  cursor: pointer;
+  transition: transform 0.5s;
+}
+.hamburger-menu .menu-line {
+  width: 100%;
+  height: 3px;
+  background-color: #000000;
+  transform-origin: right;
+  transition: all 0.5s;
+  border-radius: 10px;
+}
+.hamburger-menu .hamburger-item {
+  position: absolute;
+  width: 100%;
+  background-color: #FFFFFF;
+  height: max-content;
+  margin-top: 20px;
+  left: 0;
+  right: 0;
+  box-shadow: 0px 3px 27px 0px #f7f1f1;
+  display: none;
+}
+.hamburger-menu .hamburger-item .hamburger-menu-item {
+  margin: 10px 15px;
+}
+.hamburger-menu .hamburger-item .hamburger-menu-item .navbar-menu-link {
+  padding: 15px 0;
+}
+.hamburger-menu .hamburger-item .hamburger-menu-item a {
+  text-decoration: none;
+  list-style-type: none;
+  font-size: 1.1rem;
+  color: #545454;
+}
+.hamburger-menu .hamburger-item .hamburger-menu-item a:hover {
+  transition: 0.5s ease-in-out;
+  color: #FF5722;
+}
+
+.checkbox:checked ~ .hamburger-menu .hamburger-item {
+  display: flex;
+}
+
+.checkbox:checked ~ .hamburger-menu .menu-line-1 {
+  transform: rotate(-40deg);
+}
+
+.checkbox:checked ~ .hamburger-menu .menu-line-2 {
+  opacity: 0;
+}
+
+.checkbox:checked ~ .hamburger-menu .menu-line-3 {
+  transform: rotate(40deg);
+}
+
+.header .headerContainer {
+  height: calc(108vh - 55px);
+  position: relative;
+  width: 100%;
+}
+.header .headerContainer .pictureBanner {
+  width: 100%;
+}
+.header .headerContainer .pictureBanner .pictureBannerImg {
+  height: calc(110vh - 61px - 22%);
+  left: 0;
+  -o-object-fit: cover;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+@media screen and (max-width: 768px) {
+  .header .headerContainer .pictureBanner .pictureBannerImg {
+    height: calc(100vh - 62px) !important;
+  }
+}
+.header .headerContainer .pictureMobile .pictureMobileImg {
+  position: absolute;
+  height: 90%;
+  left: 8%;
+  top: 20%;
+}
+@media screen and (max-width: 1024px) {
+  .header .headerContainer .pictureMobile .pictureMobileImg {
+    display: none;
+  }
+}
+.header .headerContainer .askTapsi {
+  align-items: center;
+  display: flex;
+  height: calc(100vh - 60px - 22%);
+  justify-content: flex-start;
+  left: 0px;
+  position: absolute;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .header .headerContainer .askTapsi {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: max-content;
+    height: calc(100vh - 60px - 9%);
+  }
+}
+.header .headerContainer .askTapsi .right {
+  align-self: flex-end;
+  margin-bottom: 2%;
+  margin-right: 10%;
+}
+@media (max-width: 768px) {
+  .header .headerContainer .askTapsi .right {
+    margin-right: 0%;
+  }
+}
+.header .headerContainer .askTapsi .group {
+  background-image: linear-gradient(51deg, rgba(23, 26, 60, 0.7) 5%, rgba(23, 26, 60, 0.3) 95%);
+  position: relative;
+  border-radius: 20px;
+  padding: 15px;
+  width: 390px;
+  height: 300px;
+}
+@media (max-width: 768px) {
+  .header .headerContainer .askTapsi .group {
+    width: 190px;
+    height: 370px;
+  }
+}
+.header .headerContainer .askTapsi .group .group-header {
+  margin-bottom: 20px;
+}
+.header .headerContainer .askTapsi .group .group-header h1 {
+  font-size: 40px;
+  color: #FFFFFF;
+  margin-bottom: 10px;
+}
+@media (max-width: 768px) {
+  .header .headerContainer .askTapsi .group .group-header h1 {
+    font-size: 25px;
+  }
+}
+.header .headerContainer .askTapsi .group .group-header h3 {
+  font-size: 18px;
+  color: #FFFFFF;
+}
+@media (max-width: 768px) {
+  .header .headerContainer .askTapsi .group .group-header h3 {
+    font-size: 12px;
+  }
+}
+.header .headerContainer .askTapsi .group .group-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+@media (max-width: 768px) {
+  .header .headerContainer .askTapsi .group .group-btn {
+    flex-direction: column;
+  }
+}
+.header .headerContainer .askTapsi .group .group-btn a {
+  display: flex;
+  border: 2px solid #FFFFFF;
+  border-radius: 8px;
+  text-decoration: none;
+  list-style-type: none;
+  font-size: 0.89rem;
+  width: 170px;
+  height: 45px;
+  color: #FFFFFF;
+  text-align: center;
+  margin: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.header .headerContainer .askTapsi .group .group-btn a .fa-solid {
+  margin-left: 15px !important;
+}
+@media (max-width: 768px) {
+  .header .headerContainer .askTapsi .group .group-btn a {
+    margin: 5px;
+  }
+}
+.header .headerContainer .askTapsi .group .group-btn a:hover {
+  transition: 0.5s ease-in-out;
+  color: #9B9B9B;
+}
+.header .headerContainer .askTapsi .group .group-btn a.group-btn-1, .header .headerContainer .askTapsi .group .group-btn a.group-btn-2 {
+  background-color: #FFFFFF;
+  color: #545454;
+}
+.header .headerContainer .askTapsi .group .group-btn a.group-btn-1:hover, .header .headerContainer .askTapsi .group .group-btn a.group-btn-2:hover {
+  color: #9B9B9B;
+}
+.header .headerContainer .askTapsi .group .group-btn a.group-btn-5 {
+  margin: auto;
+}
+@media (max-width: 768px) {
+  .header .headerContainer .askTapsi .group .group-btn a.group-btn-5 {
+    margin: 5px;
+  }
+}
+
+.main-content .main-section .kharid,
+.main-content .main-section .khadamat,
+.main-content .main-section .mazaya,
+.main-content .main-section .new,
+.main-content .main-section .tapsi-iran,
+.main-content .main-section .tapsi-iran {
+  border: none !important;
+}
+.main-content .main-section .service,
+.main-content .main-section .khadamat,
+.main-content .main-section .kharid,
+.main-content .main-section .mazaya,
+.main-content .main-section .new,
+.main-content .main-section .tapsi-iran {
+  border-bottom: 0.01rem solid #ACACAC;
+  width: 80%;
+  margin: auto;
+}
+.main-content .main-section .service .container,
+.main-content .main-section .khadamat .container,
+.main-content .main-section .kharid .container,
+.main-content .main-section .mazaya .container,
+.main-content .main-section .new .container,
+.main-content .main-section .tapsi-iran .container {
+  margin-bottom: 100px;
+}
+.main-content .main-section .service .container .section-title,
+.main-content .main-section .khadamat .container .section-title,
+.main-content .main-section .kharid .container .section-title,
+.main-content .main-section .mazaya .container .section-title,
+.main-content .main-section .new .container .section-title,
+.main-content .main-section .tapsi-iran .container .section-title {
+  color: #000000;
+  font-weight: 700 !important;
+  font-size: 30px;
+  margin-bottom: 50px;
+}
+@media (max-width: 768px) {
+  .main-content .main-section .service .container .section-title,
+  .main-content .main-section .khadamat .container .section-title,
+  .main-content .main-section .kharid .container .section-title,
+  .main-content .main-section .mazaya .container .section-title,
+  .main-content .main-section .new .container .section-title,
+  .main-content .main-section .tapsi-iran .container .section-title {
+    font-size: 20px;
+  }
+}
+@media (max-width: 768px) {
+  .main-content .main-section .service .container .nav,
+  .main-content .main-section .khadamat .container .nav,
+  .main-content .main-section .kharid .container .nav,
+  .main-content .main-section .mazaya .container .nav,
+  .main-content .main-section .new .container .nav,
+  .main-content .main-section .tapsi-iran .container .nav {
+    overflow-y: scroll;
+    overflow-y: hidden;
+  }
+  .main-content .main-section .service .container .nav::-webkit-scrollbar,
+  .main-content .main-section .khadamat .container .nav::-webkit-scrollbar,
+  .main-content .main-section .kharid .container .nav::-webkit-scrollbar,
+  .main-content .main-section .mazaya .container .nav::-webkit-scrollbar,
+  .main-content .main-section .new .container .nav::-webkit-scrollbar,
+  .main-content .main-section .tapsi-iran .container .nav::-webkit-scrollbar {
+    height: 5px;
+  }
+  .main-content .main-section .service .container .nav::-webkit-scrollbar-track,
+  .main-content .main-section .khadamat .container .nav::-webkit-scrollbar-track,
+  .main-content .main-section .kharid .container .nav::-webkit-scrollbar-track,
+  .main-content .main-section .mazaya .container .nav::-webkit-scrollbar-track,
+  .main-content .main-section .new .container .nav::-webkit-scrollbar-track,
+  .main-content .main-section .tapsi-iran .container .nav::-webkit-scrollbar-track {
+    background: #FFFFFF;
+  }
+  .main-content .main-section .service .container .nav::-webkit-scrollbar-thumb,
+  .main-content .main-section .khadamat .container .nav::-webkit-scrollbar-thumb,
+  .main-content .main-section .kharid .container .nav::-webkit-scrollbar-thumb,
+  .main-content .main-section .mazaya .container .nav::-webkit-scrollbar-thumb,
+  .main-content .main-section .new .container .nav::-webkit-scrollbar-thumb,
+  .main-content .main-section .tapsi-iran .container .nav::-webkit-scrollbar-thumb {
+    background: #5E5E5E;
+    border-radius: 20px;
+  }
+  .main-content .main-section .service .container .nav::-webkit-scrollbar-thumb:hover,
+  .main-content .main-section .khadamat .container .nav::-webkit-scrollbar-thumb:hover,
+  .main-content .main-section .kharid .container .nav::-webkit-scrollbar-thumb:hover,
+  .main-content .main-section .mazaya .container .nav::-webkit-scrollbar-thumb:hover,
+  .main-content .main-section .new .container .nav::-webkit-scrollbar-thumb:hover,
+  .main-content .main-section .tapsi-iran .container .nav::-webkit-scrollbar-thumb:hover {
+    background: #4D4D4D;
+    border-radius: 5px;
+  }
+}
+.main-content .main-section .service .container .nav .nav-tab,
+.main-content .main-section .khadamat .container .nav .nav-tab,
+.main-content .main-section .kharid .container .nav .nav-tab,
+.main-content .main-section .mazaya .container .nav .nav-tab,
+.main-content .main-section .new .container .nav .nav-tab,
+.main-content .main-section .tapsi-iran .container .nav .nav-tab {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main-content .main-section .service .container .nav .nav-tab .nav-item-link,
+.main-content .main-section .khadamat .container .nav .nav-tab .nav-item-link,
+.main-content .main-section .kharid .container .nav .nav-tab .nav-item-link,
+.main-content .main-section .mazaya .container .nav .nav-tab .nav-item-link,
+.main-content .main-section .new .container .nav .nav-tab .nav-item-link,
+.main-content .main-section .tapsi-iran .container .nav .nav-tab .nav-item-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  text-decoration: none;
+  list-style-type: none;
+  opacity: 0.6;
+}
+.main-content .main-section .service .container .nav .nav-tab .nav-item-link:hover, .main-content .main-section .service .container .nav .nav-tab .nav-item-link.active,
+.main-content .main-section .khadamat .container .nav .nav-tab .nav-item-link:hover,
+.main-content .main-section .khadamat .container .nav .nav-tab .nav-item-link.active,
+.main-content .main-section .kharid .container .nav .nav-tab .nav-item-link:hover,
+.main-content .main-section .kharid .container .nav .nav-tab .nav-item-link.active,
+.main-content .main-section .mazaya .container .nav .nav-tab .nav-item-link:hover,
+.main-content .main-section .mazaya .container .nav .nav-tab .nav-item-link.active,
+.main-content .main-section .new .container .nav .nav-tab .nav-item-link:hover,
+.main-content .main-section .new .container .nav .nav-tab .nav-item-link.active,
+.main-content .main-section .tapsi-iran .container .nav .nav-tab .nav-item-link:hover,
+.main-content .main-section .tapsi-iran .container .nav .nav-tab .nav-item-link.active {
+  opacity: 1;
+  cursor: pointer;
+}
+.main-content .main-section .service .container .nav .nav-tab .nav-item-link .nav-item-img,
+.main-content .main-section .khadamat .container .nav .nav-tab .nav-item-link .nav-item-img,
+.main-content .main-section .kharid .container .nav .nav-tab .nav-item-link .nav-item-img,
+.main-content .main-section .mazaya .container .nav .nav-tab .nav-item-link .nav-item-img,
+.main-content .main-section .new .container .nav .nav-tab .nav-item-link .nav-item-img,
+.main-content .main-section .tapsi-iran .container .nav .nav-tab .nav-item-link .nav-item-img {
+  width: 80px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+.main-content .main-section .service .container .nav .nav-tab .nav-item-link .nav-item-sub,
+.main-content .main-section .khadamat .container .nav .nav-tab .nav-item-link .nav-item-sub,
+.main-content .main-section .kharid .container .nav .nav-tab .nav-item-link .nav-item-sub,
+.main-content .main-section .mazaya .container .nav .nav-tab .nav-item-link .nav-item-sub,
+.main-content .main-section .new .container .nav .nav-tab .nav-item-link .nav-item-sub,
+.main-content .main-section .tapsi-iran .container .nav .nav-tab .nav-item-link .nav-item-sub {
+  color: #5E5E5E;
+  font-size: 0.9rem;
+}
+@media (max-width: 768px) {
+  .main-content .main-section .service .container .nav .nav-tab .nav-item-link .nav-item-sub,
+  .main-content .main-section .khadamat .container .nav .nav-tab .nav-item-link .nav-item-sub,
+  .main-content .main-section .kharid .container .nav .nav-tab .nav-item-link .nav-item-sub,
+  .main-content .main-section .mazaya .container .nav .nav-tab .nav-item-link .nav-item-sub,
+  .main-content .main-section .new .container .nav .nav-tab .nav-item-link .nav-item-sub,
+  .main-content .main-section .tapsi-iran .container .nav .nav-tab .nav-item-link .nav-item-sub {
+    font-size: 0.7rem;
+  }
+}
+.main-content .main-section .service .container .description,
+.main-content .main-section .khadamat .container .description,
+.main-content .main-section .kharid .container .description,
+.main-content .main-section .mazaya .container .description,
+.main-content .main-section .new .container .description,
+.main-content .main-section .tapsi-iran .container .description {
+  margin-top: 30px;
+}
+.main-content .main-section .service .container .description .non,
+.main-content .main-section .khadamat .container .description .non,
+.main-content .main-section .kharid .container .description .non,
+.main-content .main-section .mazaya .container .description .non,
+.main-content .main-section .new .container .description .non,
+.main-content .main-section .tapsi-iran .container .description .non {
+  display: none !important;
+}
+.main-content .main-section .service .container .description .active,
+.main-content .main-section .khadamat .container .description .active,
+.main-content .main-section .kharid .container .description .active,
+.main-content .main-section .mazaya .container .description .active,
+.main-content .main-section .new .container .description .active,
+.main-content .main-section .tapsi-iran .container .description .active {
+  display: flex !important;
+}
+.main-content .main-section .service .container .description .description-tab,
+.main-content .main-section .khadamat .container .description .description-tab,
+.main-content .main-section .kharid .container .description .description-tab,
+.main-content .main-section .mazaya .container .description .description-tab,
+.main-content .main-section .new .container .description .description-tab,
+.main-content .main-section .tapsi-iran .container .description .description-tab {
+  display: flex;
+  margin-top: 80px;
+}
+@media (max-width: 768px) {
+  .main-content .main-section .service .container .description .description-tab .order-1,
+  .main-content .main-section .khadamat .container .description .description-tab .order-1,
+  .main-content .main-section .kharid .container .description .description-tab .order-1,
+  .main-content .main-section .mazaya .container .description .description-tab .order-1,
+  .main-content .main-section .new .container .description .description-tab .order-1,
+  .main-content .main-section .tapsi-iran .container .description .description-tab .order-1 {
+    order: 2;
+  }
+}
+@media (max-width: 768px) {
+  .main-content .main-section .service .container .description .description-tab .order-2,
+  .main-content .main-section .khadamat .container .description .description-tab .order-2,
+  .main-content .main-section .kharid .container .description .description-tab .order-2,
+  .main-content .main-section .mazaya .container .description .description-tab .order-2,
+  .main-content .main-section .new .container .description .description-tab .order-2,
+  .main-content .main-section .tapsi-iran .container .description .description-tab .order-2 {
+    order: 1;
+  }
+}
+@media (max-width: 768px) {
+  .main-content .main-section .service .container .description .description-tab,
+  .main-content .main-section .khadamat .container .description .description-tab,
+  .main-content .main-section .kharid .container .description .description-tab,
+  .main-content .main-section .mazaya .container .description .description-tab,
+  .main-content .main-section .new .container .description .description-tab,
+  .main-content .main-section .tapsi-iran .container .description .description-tab {
+    flex-direction: column;
+  }
+}
+.main-content .main-section .service .container .description .description-tab .driver,
+.main-content .main-section .khadamat .container .description .description-tab .driver,
+.main-content .main-section .kharid .container .description .description-tab .driver,
+.main-content .main-section .mazaya .container .description .description-tab .driver,
+.main-content .main-section .new .container .description .description-tab .driver,
+.main-content .main-section .tapsi-iran .container .description .description-tab .driver {
+  width: 70%;
+  height: 50%;
+}
+@media (max-width: 768px) {
+  .main-content .main-section .service .container .description .description-tab .driver,
+  .main-content .main-section .khadamat .container .description .description-tab .driver,
+  .main-content .main-section .kharid .container .description .description-tab .driver,
+  .main-content .main-section .mazaya .container .description .description-tab .driver,
+  .main-content .main-section .new .container .description .description-tab .driver,
+  .main-content .main-section .tapsi-iran .container .description .description-tab .driver {
+    width: 100%;
+    height: 100%;
+  }
+}
+.main-content .main-section .service .container .description .description-tab .description-img-margin,
+.main-content .main-section .khadamat .container .description .description-tab .description-img-margin,
+.main-content .main-section .kharid .container .description .description-tab .description-img-margin,
+.main-content .main-section .mazaya .container .description .description-tab .description-img-margin,
+.main-content .main-section .new .container .description .description-tab .description-img-margin,
+.main-content .main-section .tapsi-iran .container .description .description-tab .description-img-margin {
+  margin-left: 90px;
+}
+@media (max-width: 768px) {
+  .main-content .main-section .service .container .description .description-tab .description-img-margin,
+  .main-content .main-section .khadamat .container .description .description-tab .description-img-margin,
+  .main-content .main-section .kharid .container .description .description-tab .description-img-margin,
+  .main-content .main-section .mazaya .container .description .description-tab .description-img-margin,
+  .main-content .main-section .new .container .description .description-tab .description-img-margin,
+  .main-content .main-section .tapsi-iran .container .description .description-tab .description-img-margin {
+    margin-left: 0px;
+  }
+}
+@media (max-width: 768px) {
+  .main-content .main-section .service .container .description .description-tab .none,
+  .main-content .main-section .khadamat .container .description .description-tab .none,
+  .main-content .main-section .kharid .container .description .description-tab .none,
+  .main-content .main-section .mazaya .container .description .description-tab .none,
+  .main-content .main-section .new .container .description .description-tab .none,
+  .main-content .main-section .tapsi-iran .container .description .description-tab .none {
+    display: none;
+  }
+}
+.main-content .main-section .service .container .description .description-tab .description-img,
+.main-content .main-section .khadamat .container .description .description-tab .description-img,
+.main-content .main-section .kharid .container .description .description-tab .description-img,
+.main-content .main-section .mazaya .container .description .description-tab .description-img,
+.main-content .main-section .new .container .description .description-tab .description-img,
+.main-content .main-section .tapsi-iran .container .description .description-tab .description-img {
+  width: 90%;
+  height: 50%;
+}
+@media (max-width: 768px) {
+  .main-content .main-section .service .container .description .description-tab .description-img,
+  .main-content .main-section .khadamat .container .description .description-tab .description-img,
+  .main-content .main-section .kharid .container .description .description-tab .description-img,
+  .main-content .main-section .mazaya .container .description .description-tab .description-img,
+  .main-content .main-section .new .container .description .description-tab .description-img,
+  .main-content .main-section .tapsi-iran .container .description .description-tab .description-img {
+    width: 100%;
+    height: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .main-content .main-section .service .container .description .description-tab .description-img,
+  .main-content .main-section .khadamat .container .description .description-tab .description-img,
+  .main-content .main-section .kharid .container .description .description-tab .description-img,
+  .main-content .main-section .mazaya .container .description .description-tab .description-img,
+  .main-content .main-section .new .container .description .description-tab .description-img,
+  .main-content .main-section .tapsi-iran .container .description .description-tab .description-img {
+    margin-top: 50px;
+  }
+}
+.main-content .main-section .service .container .description .description-tab .description-img img,
+.main-content .main-section .khadamat .container .description .description-tab .description-img img,
+.main-content .main-section .kharid .container .description .description-tab .description-img img,
+.main-content .main-section .mazaya .container .description .description-tab .description-img img,
+.main-content .main-section .new .container .description .description-tab .description-img img,
+.main-content .main-section .tapsi-iran .container .description .description-tab .description-img img {
+  width: 100%;
+  height: 100%;
+}
+.main-content .main-section .service .container .description .description-tab .description-container,
+.main-content .main-section .khadamat .container .description .description-tab .description-container,
+.main-content .main-section .kharid .container .description .description-tab .description-container,
+.main-content .main-section .mazaya .container .description .description-tab .description-container,
+.main-content .main-section .new .container .description .description-tab .description-container,
+.main-content .main-section .tapsi-iran .container .description .description-tab .description-container {
+  line-height: 2.6;
+}
+.main-content .main-section .service .container .description .description-tab .description-container .font-size,
+.main-content .main-section .khadamat .container .description .description-tab .description-container .font-size,
+.main-content .main-section .kharid .container .description .description-tab .description-container .font-size,
+.main-content .main-section .mazaya .container .description .description-tab .description-container .font-size,
+.main-content .main-section .new .container .description .description-tab .description-container .font-size,
+.main-content .main-section .tapsi-iran .container .description .description-tab .description-container .font-size {
+  color: #000000;
+  font-weight: 700 !important;
+  font-size: 30px;
+  margin-bottom: 5px;
+}
+.main-content .main-section .service .container .description .description-tab .description-container .description-title,
+.main-content .main-section .khadamat .container .description .description-tab .description-container .description-title,
+.main-content .main-section .kharid .container .description .description-tab .description-container .description-title,
+.main-content .main-section .mazaya .container .description .description-tab .description-container .description-title,
+.main-content .main-section .new .container .description .description-tab .description-container .description-title,
+.main-content .main-section .tapsi-iran .container .description .description-tab .description-container .description-title {
+  font-size: 20px !important;
+  color: #000000;
+}
+@media (max-width: 768px) {
+  .main-content .main-section .service .container .description .description-tab .description-container .description-title,
+  .main-content .main-section .khadamat .container .description .description-tab .description-container .description-title,
+  .main-content .main-section .kharid .container .description .description-tab .description-container .description-title,
+  .main-content .main-section .mazaya .container .description .description-tab .description-container .description-title,
+  .main-content .main-section .new .container .description .description-tab .description-container .description-title,
+  .main-content .main-section .tapsi-iran .container .description .description-tab .description-container .description-title {
+    font-size: 15px !important;
+  }
+}
+.main-content .main-section .service .container .description .description-tab .description-container .description-sub,
+.main-content .main-section .khadamat .container .description .description-tab .description-container .description-sub,
+.main-content .main-section .kharid .container .description .description-tab .description-container .description-sub,
+.main-content .main-section .mazaya .container .description .description-tab .description-container .description-sub,
+.main-content .main-section .new .container .description .description-tab .description-container .description-sub,
+.main-content .main-section .tapsi-iran .container .description .description-tab .description-container .description-sub {
+  font-size: 13px;
+  text-align: justify;
+  width: 85%;
+  color: #5E5E5E;
+}
+.main-content .main-section .service .container .description .description-tab .description-container .bishtar,
+.main-content .main-section .khadamat .container .description .description-tab .description-container .bishtar,
+.main-content .main-section .kharid .container .description .description-tab .description-container .bishtar,
+.main-content .main-section .mazaya .container .description .description-tab .description-container .bishtar,
+.main-content .main-section .new .container .description .description-tab .description-container .bishtar,
+.main-content .main-section .tapsi-iran .container .description .description-tab .description-container .bishtar {
+  font-size: 0.9rem;
+  color: #FF5722;
+  cursor: pointer;
+}
+.main-content .main-section .service .container .description .description-tab .description-container .bishtar i,
+.main-content .main-section .khadamat .container .description .description-tab .description-container .bishtar i,
+.main-content .main-section .kharid .container .description .description-tab .description-container .bishtar i,
+.main-content .main-section .mazaya .container .description .description-tab .description-container .bishtar i,
+.main-content .main-section .new .container .description .description-tab .description-container .bishtar i,
+.main-content .main-section .tapsi-iran .container .description .description-tab .description-container .bishtar i {
+  margin: 5px;
+}
+@media (max-width: 768px) {
+  .main-content .main-section .service .container .description .description-tab .description-container h2,
+  .main-content .main-section .khadamat .container .description .description-tab .description-container h2,
+  .main-content .main-section .kharid .container .description .description-tab .description-container h2,
+  .main-content .main-section .mazaya .container .description .description-tab .description-container h2,
+  .main-content .main-section .new .container .description .description-tab .description-container h2,
+  .main-content .main-section .tapsi-iran .container .description .description-tab .description-container h2 {
+    font-size: 1.2rem !important;
+  }
+}
+@media (max-width: 768px) {
+  .main-content .main-section .service .container .description .description-tab .description-container p,
+  .main-content .main-section .khadamat .container .description .description-tab .description-container p,
+  .main-content .main-section .kharid .container .description .description-tab .description-container p,
+  .main-content .main-section .mazaya .container .description .description-tab .description-container p,
+  .main-content .main-section .new .container .description .description-tab .description-container p,
+  .main-content .main-section .tapsi-iran .container .description .description-tab .description-container p {
+    font-size: 0.8rem !important;
+  }
+}
+.main-content .main-section .service .container .description .description-tab .description-container h3,
+.main-content .main-section .khadamat .container .description .description-tab .description-container h3,
+.main-content .main-section .kharid .container .description .description-tab .description-container h3,
+.main-content .main-section .mazaya .container .description .description-tab .description-container h3,
+.main-content .main-section .new .container .description .description-tab .description-container h3,
+.main-content .main-section .tapsi-iran .container .description .description-tab .description-container h3 {
+  font-size: 1.3rem !important;
+  color: #4D4D4D !important;
+}
+@media (max-width: 768px) {
+  .main-content .main-section .service .container .description .description-tab .description-container h3,
+  .main-content .main-section .khadamat .container .description .description-tab .description-container h3,
+  .main-content .main-section .kharid .container .description .description-tab .description-container h3,
+  .main-content .main-section .mazaya .container .description .description-tab .description-container h3,
+  .main-content .main-section .new .container .description .description-tab .description-container h3,
+  .main-content .main-section .tapsi-iran .container .description .description-tab .description-container h3 {
+    font-size: 1rem !important;
+  }
+}
+@media (max-width: 895px) {
+  .main-content .main-section .service .container .description .description-tab .description-container .btn-blue,
+  .main-content .main-section .khadamat .container .description .description-tab .description-container .btn-blue,
+  .main-content .main-section .kharid .container .description .description-tab .description-container .btn-blue,
+  .main-content .main-section .mazaya .container .description .description-tab .description-container .btn-blue,
+  .main-content .main-section .new .container .description .description-tab .description-container .btn-blue,
+  .main-content .main-section .tapsi-iran .container .description .description-tab .description-container .btn-blue {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+  }
+}
+.main-content .main-section .service .container .description .description-tab .description-container .btn-blue a,
+.main-content .main-section .khadamat .container .description .description-tab .description-container .btn-blue a,
+.main-content .main-section .kharid .container .description .description-tab .description-container .btn-blue a,
+.main-content .main-section .mazaya .container .description .description-tab .description-container .btn-blue a,
+.main-content .main-section .new .container .description .description-tab .description-container .btn-blue a,
+.main-content .main-section .tapsi-iran .container .description .description-tab .description-container .btn-blue a {
+  background-color: #0065DC !important;
+  margin: 10px;
+  transition: all 0.5s ease-in-out;
+  width: 160px;
+  height: 30px;
+}
+.main-content .main-section .service .container .description .description-tab .description-container .description-btn,
+.main-content .main-section .khadamat .container .description .description-tab .description-container .description-btn,
+.main-content .main-section .kharid .container .description .description-tab .description-container .description-btn,
+.main-content .main-section .mazaya .container .description .description-tab .description-container .description-btn,
+.main-content .main-section .new .container .description .description-tab .description-container .description-btn,
+.main-content .main-section .tapsi-iran .container .description .description-tab .description-container .description-btn {
+  text-decoration: none;
+  list-style-type: none;
+  border-radius: 8px;
+  padding: 15px 18px;
+  font-size: 14px;
+  background-color: #FF5722;
+  color: #FFFFFF;
+}
+.main-content .main-section .service .container .description .description-tab .description-container .description-btn:hover,
+.main-content .main-section .khadamat .container .description .description-tab .description-container .description-btn:hover,
+.main-content .main-section .kharid .container .description .description-tab .description-container .description-btn:hover,
+.main-content .main-section .mazaya .container .description .description-tab .description-container .description-btn:hover,
+.main-content .main-section .new .container .description .description-tab .description-container .description-btn:hover,
+.main-content .main-section .tapsi-iran .container .description .description-tab .description-container .description-btn:hover {
+  opacity: 0.9;
+}
+.main-content .main-section .service .container .description .description-tab .description-container .description-btn span,
+.main-content .main-section .khadamat .container .description .description-tab .description-container .description-btn span,
+.main-content .main-section .kharid .container .description .description-tab .description-container .description-btn span,
+.main-content .main-section .mazaya .container .description .description-tab .description-container .description-btn span,
+.main-content .main-section .new .container .description .description-tab .description-container .description-btn span,
+.main-content .main-section .tapsi-iran .container .description .description-tab .description-container .description-btn span {
+  position: relative;
+  top: 20px;
+}
+.main-content .main-section .service .container .description .description-tab .description-container .description-btn .blue,
+.main-content .main-section .khadamat .container .description .description-tab .description-container .description-btn .blue,
+.main-content .main-section .kharid .container .description .description-tab .description-container .description-btn .blue,
+.main-content .main-section .mazaya .container .description .description-tab .description-container .description-btn .blue,
+.main-content .main-section .new .container .description .description-tab .description-container .description-btn .blue,
+.main-content .main-section .tapsi-iran .container .description .description-tab .description-container .description-btn .blue {
+  top: 0px;
+}
+.main-content .main-section .service .container .description .description-tab .description-container .card-container,
+.main-content .main-section .khadamat .container .description .description-tab .description-container .card-container,
+.main-content .main-section .kharid .container .description .description-tab .description-container .card-container,
+.main-content .main-section .mazaya .container .description .description-tab .description-container .card-container,
+.main-content .main-section .new .container .description .description-tab .description-container .card-container,
+.main-content .main-section .tapsi-iran .container .description .description-tab .description-container .card-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  text-align: justify;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .main-content .main-section .service .container .description .description-tab .description-container .card-container,
+  .main-content .main-section .khadamat .container .description .description-tab .description-container .card-container,
+  .main-content .main-section .kharid .container .description .description-tab .description-container .card-container,
+  .main-content .main-section .mazaya .container .description .description-tab .description-container .card-container,
+  .main-content .main-section .new .container .description .description-tab .description-container .card-container,
+  .main-content .main-section .tapsi-iran .container .description .description-tab .description-container .card-container {
+    flex-direction: column;
+  }
+}
+.main-content .main-section .service .container .description .description-tab .description-container .card-container .card,
+.main-content .main-section .khadamat .container .description .description-tab .description-container .card-container .card,
+.main-content .main-section .kharid .container .description .description-tab .description-container .card-container .card,
+.main-content .main-section .mazaya .container .description .description-tab .description-container .card-container .card,
+.main-content .main-section .new .container .description .description-tab .description-container .card-container .card,
+.main-content .main-section .tapsi-iran .container .description .description-tab .description-container .card-container .card {
+  padding: 15px 10px;
+  width: calc(33.3333333333% - 10px);
+  margin-top: 50px;
+  height: 400px;
+}
+@media (max-width: 768px) {
+  .main-content .main-section .service .container .description .description-tab .description-container .card-container .card,
+  .main-content .main-section .khadamat .container .description .description-tab .description-container .card-container .card,
+  .main-content .main-section .kharid .container .description .description-tab .description-container .card-container .card,
+  .main-content .main-section .mazaya .container .description .description-tab .description-container .card-container .card,
+  .main-content .main-section .new .container .description .description-tab .description-container .card-container .card,
+  .main-content .main-section .tapsi-iran .container .description .description-tab .description-container .card-container .card {
+    width: 100%;
+    height: max-content;
+  }
+}
+.main-content .main-section .service .container .description .description-tab .description-container .card-container .card:hover,
+.main-content .main-section .khadamat .container .description .description-tab .description-container .card-container .card:hover,
+.main-content .main-section .kharid .container .description .description-tab .description-container .card-container .card:hover,
+.main-content .main-section .mazaya .container .description .description-tab .description-container .card-container .card:hover,
+.main-content .main-section .new .container .description .description-tab .description-container .card-container .card:hover,
+.main-content .main-section .tapsi-iran .container .description .description-tab .description-container .card-container .card:hover {
+  border-radius: 8px;
+  box-shadow: 1px 1px 10px 1px #f1e3e3;
+  cursor: pointer;
+}
+.main-content .main-section .service .container .description .description-tab .description-container .card-container .card h3,
+.main-content .main-section .khadamat .container .description .description-tab .description-container .card-container .card h3,
+.main-content .main-section .kharid .container .description .description-tab .description-container .card-container .card h3,
+.main-content .main-section .mazaya .container .description .description-tab .description-container .card-container .card h3,
+.main-content .main-section .new .container .description .description-tab .description-container .card-container .card h3,
+.main-content .main-section .tapsi-iran .container .description .description-tab .description-container .card-container .card h3 {
+  font-size: 1.1rem !important;
+}
+@media (max-width: 768px) {
+  .main-content .main-section .service .container .description .description-tab .description-container .card-container .card h3,
+  .main-content .main-section .khadamat .container .description .description-tab .description-container .card-container .card h3,
+  .main-content .main-section .kharid .container .description .description-tab .description-container .card-container .card h3,
+  .main-content .main-section .mazaya .container .description .description-tab .description-container .card-container .card h3,
+  .main-content .main-section .new .container .description .description-tab .description-container .card-container .card h3,
+  .main-content .main-section .tapsi-iran .container .description .description-tab .description-container .card-container .card h3 {
+    font-size: 0.9rem !important;
+  }
+}
+.main-content .main-section .service .container .description .description-tab .description-container .card-container .card p,
+.main-content .main-section .khadamat .container .description .description-tab .description-container .card-container .card p,
+.main-content .main-section .kharid .container .description .description-tab .description-container .card-container .card p,
+.main-content .main-section .mazaya .container .description .description-tab .description-container .card-container .card p,
+.main-content .main-section .new .container .description .description-tab .description-container .card-container .card p,
+.main-content .main-section .tapsi-iran .container .description .description-tab .description-container .card-container .card p {
+  font-size: 1rem !important;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+@media (max-width: 768px) {
+  .main-content .main-section .service .container .description .description-tab .description-container .card-container .card p,
+  .main-content .main-section .khadamat .container .description .description-tab .description-container .card-container .card p,
+  .main-content .main-section .kharid .container .description .description-tab .description-container .card-container .card p,
+  .main-content .main-section .mazaya .container .description .description-tab .description-container .card-container .card p,
+  .main-content .main-section .new .container .description .description-tab .description-container .card-container .card p,
+  .main-content .main-section .tapsi-iran .container .description .description-tab .description-container .card-container .card p {
+    font-size: 0.8rem !important;
+  }
+}
+.main-content .main-section .service .container .description .description-tab .description-container .City,
+.main-content .main-section .khadamat .container .description .description-tab .description-container .City,
+.main-content .main-section .kharid .container .description .description-tab .description-container .City,
+.main-content .main-section .mazaya .container .description .description-tab .description-container .City,
+.main-content .main-section .new .container .description .description-tab .description-container .City,
+.main-content .main-section .tapsi-iran .container .description .description-tab .description-container .City {
+  display: flex;
+  margin-top: 1%;
+  flex-flow: row wrap;
+  flex-basis: 100%;
+}
+.main-content .main-section .service .container .description .description-tab .description-container .City .city,
+.main-content .main-section .khadamat .container .description .description-tab .description-container .City .city,
+.main-content .main-section .kharid .container .description .description-tab .description-container .City .city,
+.main-content .main-section .mazaya .container .description .description-tab .description-container .City .city,
+.main-content .main-section .new .container .description .description-tab .description-container .City .city,
+.main-content .main-section .tapsi-iran .container .description .description-tab .description-container .City .city {
+  margin-bottom: 5px;
+  width: 12%;
+}
+.main-content .main-section .service .container .description .description-tab .description-container .City .city .name,
+.main-content .main-section .khadamat .container .description .description-tab .description-container .City .city .name,
+.main-content .main-section .kharid .container .description .description-tab .description-container .City .city .name,
+.main-content .main-section .mazaya .container .description .description-tab .description-container .City .city .name,
+.main-content .main-section .new .container .description .description-tab .description-container .City .city .name,
+.main-content .main-section .tapsi-iran .container .description .description-tab .description-container .City .city .name {
+  font-size: 0.9rem !important;
+}
+.main-content .main-section .service .container .description .description-tab .description-container .City .city .english-name,
+.main-content .main-section .khadamat .container .description .description-tab .description-container .City .city .english-name,
+.main-content .main-section .kharid .container .description .description-tab .description-container .City .city .english-name,
+.main-content .main-section .mazaya .container .description .description-tab .description-container .City .city .english-name,
+.main-content .main-section .new .container .description .description-tab .description-container .City .city .english-name,
+.main-content .main-section .tapsi-iran .container .description .description-tab .description-container .City .city .english-name {
+  font-size: 0.7rem !important;
+}
+.main-content .main-section .tapsi-iran {
+  width: 100%;
+  height: 430px;
+  background: url(../images/map-back.svg) no-repeat;
+  background-color: #f8f8f9;
+}
+@media (max-width: 768px) {
+  .main-content .main-section .tapsi-iran {
+    display: none;
+  }
+}
+.main-content .main-section .tapsi-iran .darsad {
+  width: 80% !important;
+  margin: auto;
+}
+.main-content .contact {
+  background: url(../images/parallax.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+  height: 150px;
+}
+@media (max-width: 768px) {
+  .main-content .contact {
+    height: max-content;
+  }
+}
+.main-content .contact .bordr {
+  height: 40px;
+  border-left: 0.13rem solid #FFFFFF;
+  background: #FFFFFF;
+  margin: 0 10px;
+}
+@media (max-width: 768px) {
+  .main-content .contact .bordr {
+    display: none;
+  }
+}
+.main-content .contact .contact-container {
+  display: flex;
+  align-self: center;
+  width: 90%;
+  margin: auto;
+}
+@media (max-width: 768px) {
+  .main-content .contact .contact-container {
+    flex-direction: column;
+  }
+}
+.main-content .contact .contact-container .bordr,
+.main-content .contact .contact-container .contact-container-item {
+  margin-top: 5%;
+  color: #FFFFFF;
+}
+@media (max-width: 768px) {
+  .main-content .contact .contact-container .bordr,
+  .main-content .contact .contact-container .contact-container-item {
+    margin-top: 5%;
+  }
+}
+.main-content .contact .contact-container h1 {
+  font-size: 1.2rem;
+  text-align: center;
+  color: #FFFFFF;
+}
+@media (max-width: 768px) {
+  .main-content .contact .contact-container h1 {
+    font-size: 1rem !important;
+  }
+}
+.main-content .contact .contact-container p {
+  font-size: 0.8rem;
+  position: relative;
+  text-align: center !important;
+  color: #FFFFFF;
+  opacity: 0;
+  text-align: justify;
+}
+@media (max-width: 768px) {
+  .main-content .contact .contact-container p {
+    font-size: 0.8rem !important;
+  }
+}
+.main-content .contact .contact-container .contact-container-item:hover p {
+  opacity: 1;
+}
+.main-content .contact .contact-container .contact-container-item:hover h1 {
+  margin-top: -20px;
+  margin-bottom: 10px;
+}
+@media (max-width: 768px) {
+  .main-content .contact .contact-container .contact-container-item:hover h1 {
+    margin-top: -5px;
+    margin-bottom: 5px;
+  }
+}
+
+.footer {
+  background-color: #000000;
+  width: 100%;
+  height: 100%;
+  padding: 10px 0px;
+}
+.footer-container {
+  padding: 40px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 80%;
+  margin: auto;
+}
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+  }
+}
+@media (max-width: 992px) {
+  .footer-container .menu-nemad {
+    display: none;
+  }
+}
+.footer-container .menu-nemad .etehadiye {
+  width: 90px;
+  height: 100%;
+}
+.footer-container .menu-nemad .samandehi {
+  width: 75px;
+  height: 100%;
+}
+.footer-container .menu-tapsi .menu-item h3,
+.footer-container .menu-mosafer .menu-item h3,
+.footer-container .menu-driver .menu-item h3,
+.footer-container .menu-job .menu-item h3 {
+  color: #FFFFFF;
+  margin-bottom: 10px;
+}
+@media (max-width: 768px) {
+  .footer-container .menu-tapsi .menu-item h3,
+  .footer-container .menu-mosafer .menu-item h3,
+  .footer-container .menu-driver .menu-item h3,
+  .footer-container .menu-job .menu-item h3 {
+    margin-top: 10px;
+  }
+}
+.footer-container .menu-tapsi .menu-item .menu-item-link,
+.footer-container .menu-mosafer .menu-item .menu-item-link,
+.footer-container .menu-driver .menu-item .menu-item-link,
+.footer-container .menu-job .menu-item .menu-item-link {
+  text-decoration: none;
+  list-style-type: none;
+  font-size: 0.7rem;
+  color: #FFFFFF;
+  line-height: 2;
+}
+@media (max-width: 1024px) {
+  .footer-container .menu-tapsi .menu-item .menu-item-link,
+  .footer-container .menu-mosafer .menu-item .menu-item-link,
+  .footer-container .menu-driver .menu-item .menu-item-link,
+  .footer-container .menu-job .menu-item .menu-item-link {
+    font-size: 0.7rem;
+  }
+}
+.footer-container .menu-tapsi .menu-item .menu-item-link:hover,
+.footer-container .menu-mosafer .menu-item .menu-item-link:hover,
+.footer-container .menu-driver .menu-item .menu-item-link:hover,
+.footer-container .menu-job .menu-item .menu-item-link:hover {
+  transition: all 0.3s ease-in-out;
+  color: #FF5722;
+}
+.footer .menu-social {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.footer .menu-social a {
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+@media (max-width: 768px) {
+  .footer .menu-social a .social-img {
+    width: 20px;
+    height: 20px;
+  }
+}
+@media (max-width: 768px) {
+  .footer .menu-social a {
+    width: 25px;
+    height: 25px;
+  }
+}
+.footer .menu-social a:hover:nth-child(5) {
+  background-color: #0065DC;
+}
+.footer .menu-social a:hover:nth-child(4) {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+.footer .menu-social a:hover:nth-child(3) {
+  background-color: #1D9BF0;
+}
+.footer .menu-social a:hover:nth-child(2) {
+  background-color: #0274B3;
+}
+.footer .menu-social a:hover:nth-child(1) {
+  background-color: #32A5D8;
+}
+.footer .menu-social a:hover {
+  transform: scale(1.1);
+  transform: rotate(10deg);
+}
+.footer .menu-copyright {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 0.8rem;
+  color: #FFFFFF;
+  margin-top: 10px;
+}
+@media (max-width: 425px) {
+  .footer .menu-copyright {
+    font-size: 0.6rem;
+  }
+}/*# sourceMappingURL=main.css.map */
